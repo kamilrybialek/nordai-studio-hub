@@ -1,13 +1,26 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useTranslation } from 'react-i18next';
+import Layout from '@/components/layout/Layout';
+import SEO from '@/components/SEO';
+import HeroSection from '@/components/sections/HeroSection';
+import ServicesSection from '@/components/sections/ServicesSection';
+import WhyUsSection from '@/components/sections/WhyUsSection';
+import CTASection from '@/components/sections/CTASection';
 
 const Index = () => {
+  const { t } = useTranslation();
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <Layout>
+      <SEO 
+        title={t('meta.home.title')} 
+        description={t('meta.home.description')}
+        canonical="/"
+      />
+      <HeroSection />
+      <ServicesSection />
+      <WhyUsSection />
+      <CTASection />
+    </Layout>
   );
 };
 
